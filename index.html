@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>SVG hover hints demo by #Blondiecode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="holder flex col">
+        <header>
+            <nav>
+                <ul class="flex row">
+                    <li class="active">
+                        <a href="./">Packing Symbols</a>
+                    </li>
+                    <li>
+                        <a href="demo-2.html">Cat's prints</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="hints" class="flex">
+            <div class="content flex">
+                <div class="svg-holder" id="svgHolder"></div>
+                <div class="svg-description">
+                    <h2>International Packing Symbols</h2>
+                    <p id="box">1. When you see two hands cupping a cube, you know that you should “handle with care.” Contents are more than likely fragile, made up of intricate parts or otherwise easily damaged</p>
+                    <p id="arrows">2. The image of two upward arrows above a box indicates, “This way up.” For the duration of shipping/delivery, the carton should face upright</p>
+                    <p id="glass">3. This cracked wine glass label lets you know the item(s) inside is “fragile.” You’ll notice this symbol on cartons containing items such as china and glassware</p>
+                    <p id="umbrella">4. The umbrella reminds you to “keep dry.” The package should never get wet or be stored in damp areas</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <small><a href="https://www.youtube.com/c/AidaDrogan" target="_blank">#BlondieCode © 2020</a></small>
+        </footer>
+    </div>
+    <script type="module">
+        import * as svgHints from './svgHints.js';
+        const hintObjects = [
+            {hintId: "box", svgIds: ["box"]},
+            {hintId: "arrows", svgIds: ["arrows"]},
+            {hintId: "glass", svgIds: ["glass"]},
+            {hintId: "umbrella", svgIds: ["umbrella"]}
+        ]
+        svgHints.createHints({
+            fileName: "package-handling-symbols.svg",
+            svgHolderId: "svgHolder",
+            hintObjects: hintObjects,
+            activeColor: "#CC0000",
+            passiveColor: "#000000"
+        })
+    </script>
+</body>
+</html>

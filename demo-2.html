@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>SVG hover hints demo by #Blondiecode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+<div class="holder flex col">
+    <header>
+        <nav>
+            <ul class="flex row">
+                <li>
+                    <a href="./">Packing Symbols</a>
+                </li>
+                <li class="active">
+                    <a href="demo-2.html">Cat's prints</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="hints" class="flex">
+        <div class="content flex">
+            <div class="svg-holder" id="svgHolder"></div>
+            <div class="svg-description">
+                <h2>Cat's prints</h2>
+                <p id="bono">1. Meow from Bono</p>
+                <p id="timmy">2. Meow from Timmy</p>
+                <p id="max">3. Meow from Max</p>
+                <p id="alice">4. Meow from Alice</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small><a href="https://www.youtube.com/c/AidaDrogan" target="_blank">#BlondieCode © 2020</a></small>
+    </footer>
+</div>
+<script type="module">
+    import * as svgHints from './svgHints.js';
+    const hintObjects = [
+        {hintId: "bono", svgIds: ["1", "5", "10"], activeColor: "#4aa6cc"},
+        {hintId: "timmy", svgIds: ["2", "6"], activeColor: "#6dcc3e"},
+        {hintId: "max", svgIds: ["3", "7"]},
+        {hintId: "alice", svgIds: ["4", "8", "9"], activeColor: "#ad1acc"}
+    ]
+    svgHints.createHints({
+        fileName: "heart.svg",
+        svgHolderId: "svgHolder",
+        hintObjects: hintObjects,
+        activeColor: "#CC0000",
+        passiveColor: "#000000"
+    })
+</script>
+</body>
+</html>
